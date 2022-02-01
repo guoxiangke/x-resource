@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\XbotWebHookController;
+use App\Http\Controllers\ResourceController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,4 +18,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/webhook/xbot/{token}', XbotWebHookController::class);
+Route::get('/resources/{keword}', ResourceController::class);
