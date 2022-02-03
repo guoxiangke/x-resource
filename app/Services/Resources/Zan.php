@@ -12,7 +12,7 @@ use voku\helper\HtmlDomParser;
 final class Zan{
 	public function __invoke($keyword)
 	{
-        $triggerKeywords = ["赞", "赞美", "赞美诗", "赞美诗歌", "赞美诗网"];
+        $triggerKeywords = ["赞美诗网","赞美诗歌","赞美诗", "赞美", "赞" ];
         if(Str::startsWith($keyword, $triggerKeywords)){
             $name = str_replace(
                 $triggerKeywords,
