@@ -24,7 +24,7 @@ final class Zenai {
                     'type' => 'card',
                     'data' => [
                         'image' => 'https://img-1253798207.file.myqcloud.com/tljd.png',
-                        "url" => 'https://d7jf0n9s4n8dc.cloudfront.net/html/tljd/tljd{$date}.html',
+                        "url" => "https://d7jf0n9s4n8dc.cloudfront.net/html/tljd/tljd{$date}.html",
                         'title' => "【喜乐灵程】{$date}",
                         'description' => '节目文本',
                     ],
