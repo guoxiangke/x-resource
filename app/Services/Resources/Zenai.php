@@ -11,22 +11,47 @@ use voku\helper\HtmlDomParser;
 
 final class Zenai {
 	public function __invoke($keyword) {
-        if($keyword == "喜乐灵程"){
-            $date = date('ymd');
+
+        $date = date('ymd');
+        $res = [
+            '喜乐灵程' =>[
+                'text' => "https://d7jf0n9s4n8dc.cloudfront.net/html/tljd/tljd{$date}.html",
+                'image' => 'https://img-1253798207.file.myqcloud.com/tljd.png',
+                'audio' => "http://dailyaudio-1253798207.file.myqcloud.com/tljd{$date}.mp3"
+            ],
+            '灵程真言' =>[
+                'text' => "https://d7jf0n9s4n8dc.cloudfront.net/html/tllczy/tllczy{$date}.html",
+                'image' => 'https://img-1253798207.file.myqcloud.com/tllczy.png',
+                'audio' => "http://dailyaudio-1253798207.file.myqcloud.com/tllczy{$date}.mp3"
+            ],
+            '真爱驻我家' =>[
+                'text' => "https://d7jf0n9s4n8dc.cloudfront.net/html/tlsp/tlsp{$date}.html",
+                'image' => 'https://img-1253798207.file.myqcloud.com/tltl.png',
+                'audio' => "http://dailyaudio-1253798207.file.myqcloud.com/tlsp{$date}.mp3"
+            ],
+            '认识你真好' =>[
+                'text' => "https://d7jf0n9s4n8dc.cloudfront.net/html/vof/vof{$date}.html",
+                'image' => 'https://img-1253798207.file.myqcloud.com/vof.png',
+                'audio' => "https://febc-1253798207.file.myqcloud.com/vof/vof{$date}.mp3"
+            ],
+        ];
+
+        if(in_array($keyword, array_keys($res))){
+            $res = $res[$keyword];
             return [
             	'type' => 'music',
             	"data"=> [
-                    "url" => "https://open.ly.yongbuzhixi.com/ly/audio/2022/mw/mw220204.mp3",
-                    'title' => "【喜乐灵程】{$date}",
+                    "url" => $res['audio'],
+                    'title' => "【{$keyword}】{$date}",
                     'description' => '真爱驻我家',
                 ],
                 'addition' =>[
                     'type' => 'link',
                     'data' => [
-                        'image' => 'https://img-1253798207.file.myqcloud.com/tljd.png',
-                        "url" => "https://d7jf0n9s4n8dc.cloudfront.net/html/tljd/tljd{$date}.html",
-                        'title' => "【喜乐灵程】{$date}",
-                        'description' => '节目文本',
+                        'image' => $res['image'],
+                        "url" => $res['text'],
+                        'title' => "【{$keyword}】{$date}",
+                        'description' => '节目文本 真爱驻我家',
                     ],
                 ],
             ];
