@@ -18,23 +18,26 @@ final class Zenai {
                 'imageCode' => 'tljd',
                 'code' => "tljd",
                 'textCode' => "tljd",
+                'cdn' => 'cdnapi',
             ],
             '灵程真言' =>[ // 1 - 7
                 'imageCode' => 'tllczy',
                 'image' => 'https://img-1253798207.file.myqcloud.com/tllczy.png',
                 'code' => "tllczy",
                 'textCode' => "tllczy",
+                'cdn' => 'cdnapi',
             ],
             '真爱驻我家' =>[
                 'imageCode' => 'tltl',
                 'code' => "tlsp",
                 'textCode' => "tlsp",
+                'cdn' => 'cdnapi',
             ],
             '认识你真好' =>[
                 'imageCode' => 'vof',
-                // https://febc-1253798207.file.myqcloud.com/vof/vof220204.mp3
                 'code' => "vof",
                 'textCode' => "vof",
+                'cdn' => 'silk',
             ],
         ];
 
@@ -43,7 +46,7 @@ final class Zenai {
             return [
             	'type' => 'music',
             	"data"=> [
-                    "url" => "http://cdnapi.yongbuzhixi.com/{$res['code']}{$date}.mp3",
+                    "url" => "http://{$res['silk']}.yongbuzhixi.com/{$res['code']}{$date}.mp3",
                     'title' => "【{$keyword}】{$date}",
                     'description' => '真爱驻我家',
                 ],
