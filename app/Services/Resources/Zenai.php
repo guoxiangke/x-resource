@@ -14,21 +14,27 @@ final class Zenai {
 
         $date = date('ymd');
         $res = [
-            '喜乐灵程' =>[
-                'image' => 'https://img-1253798207.file.myqcloud.com/tljd.png',
-                'code' => "tljd"
+            '喜乐灵程' =>[ // 1-7
+                'imageCode' => 'tljd',
+                'code' => "tljd",
+                'textCode' => "tljd",
             ],
-            '灵程真言' =>[
+            '灵程真言' =>[ // 1 - 7
+                'imageCode' => 'tllczy',
                 'image' => 'https://img-1253798207.file.myqcloud.com/tllczy.png',
-                'code' => "tllczy"
+                'code' => "tllczy",
+                'textCode' => "tllczy",
             ],
             '真爱驻我家' =>[
-                'image' => 'https://img-1253798207.file.myqcloud.com/tltl.png',
-                'code' => "tlsp"
+                'imageCode' => 'tltl',
+                'code' => "tlsp",
+                'textCode' => "tlsp",
             ],
             '认识你真好' =>[
-                'image' => 'https://img-1253798207.file.myqcloud.com/tltl.png',
-                'code' => "vof"
+                'imageCode' => 'vof',
+                // https://febc-1253798207.file.myqcloud.com/vof/vof220204.mp3
+                'code' => "vof",
+                'textCode' => "vof",
             ],
         ];
 
@@ -44,8 +50,8 @@ final class Zenai {
                 'addition' =>[
                     'type' => 'link',
                     'data' => [
-                        'image' => $res['image'],
-                        "url" => "https://d7jf0n9s4n8dc.cloudfront.net/html/{$res['code']}/{$res['code']}{$date}.html",
+                        'image' => "https://img-1253798207.file.myqcloud.com/{$res['imageCode']}.png",
+                        "url" => "https://d7jf0n9s4n8dc.cloudfront.net/html/{$res['textCode']}/{$res['textCode']}{$date}.html",
                         'title' => "【{$keyword}】{$date}",
                         'description' => '节目文本 真爱驻我家',
                     ],
