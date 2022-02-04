@@ -15,20 +15,21 @@ final class Zenai {
         $date = date('ymd');
         $res = [
             '喜乐灵程' =>[
-                'text' => "https://d7jf0n9s4n8dc.cloudfront.net/html/tljd/tljd{$date}.html",
                 'image' => 'https://img-1253798207.file.myqcloud.com/tljd.png',
                 'code' => "tljd"
             ],
             '灵程真言' =>[
-                'text' => "https://d7jf0n9s4n8dc.cloudfront.net/html/tllczy/tllczy{$date}.html",
                 'image' => 'https://img-1253798207.file.myqcloud.com/tllczy.png',
                 'code' => "tllczy"
             ],
             '真爱驻我家' =>[
-                'text' => "https://d7jf0n9s4n8dc.cloudfront.net/html/tlsp/tlsp{$date}.html",
                 'image' => 'https://img-1253798207.file.myqcloud.com/tltl.png',
                 'code' => "tlsp"
-            ]
+            ],
+            '认识你真好' =>[
+                'image' => 'https://img-1253798207.file.myqcloud.com/tltl.png',
+                'code' => "vof"
+            ],
         ];
 
         if(in_array($keyword, array_keys($res))){
@@ -44,7 +45,7 @@ final class Zenai {
                     'type' => 'link',
                     'data' => [
                         'image' => $res['image'],
-                        "url" => $res['text'],
+                        "url" => "https://d7jf0n9s4n8dc.cloudfront.net/html/{$res['code']}/{$res['code']}{$date}.html",
                         'title' => "【{$keyword}】{$date}",
                         'description' => '节目文本 真爱驻我家',
                     ],
