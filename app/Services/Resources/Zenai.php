@@ -13,18 +13,13 @@ final class Zenai {
 	public function __invoke($keyword) {
         if($keyword == "喜乐灵程"){
             $date = date('ymd');
-            $cacheKey = "xbot.keyword.tljd";
-            $data = Cache::get($cacheKey, false);
-
-            $data =[
-                "url" => "http://dailyaudio-1253798207.file.myqcloud.com/tljd{$date}.mp3",
-                'title' => "【喜乐灵程】{$date}",
-                'description' => '真爱驻我家',
-            ];
-
             return [
             	'type' => 'music',
-            	"data"=> $data,
+            	"data"=> [
+                    "url" => "http://dailyaudio-1253798207.file.myqcloud.com/tljd{$date}.mp3",
+                    'title' => "【喜乐灵程】{$date}",
+                    'description' => '真爱驻我家',
+                ],
                 'addition' =>[
                     'type' => 'card',
                     'data' => [
