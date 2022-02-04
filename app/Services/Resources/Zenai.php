@@ -16,7 +16,7 @@ final class Zenai {
             return [
             	'type' => 'music',
             	"data"=> [
-                    "url" => "http://dailyaudio-1253798207.file.myqcloud.com/tljd{$date}.mp3",
+                    "url" => "https://open.ly.yongbuzhixi.com/ly/audio/2022/mw/mw220204.mp3",
                     'title' => "【喜乐灵程】{$date}",
                     'description' => '真爱驻我家',
                 ],
