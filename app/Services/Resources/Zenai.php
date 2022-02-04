@@ -21,7 +21,7 @@ final class Zenai {
                     'description' => '真爱驻我家',
                 ],
                 'addition' =>[
-                    'type' => 'card',
+                    'type' => 'link',
                     'data' => [
                         'image' => 'https://img-1253798207.file.myqcloud.com/tljd.png',
                         "url" => "https://d7jf0n9s4n8dc.cloudfront.net/html/tljd/tljd{$date}.html",
