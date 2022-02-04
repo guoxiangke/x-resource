@@ -13,7 +13,7 @@ final class Zenai {
 	public function __invoke($keyword) {
         if($keyword == "喜乐灵程"){
             $date = date('ymd');
-            $cacheKey = "xbot.keyword.ChineseToday";
+            $cacheKey = "xbot.keyword.tljd";
             $data = Cache::get($cacheKey, false);
 
             $data =[
