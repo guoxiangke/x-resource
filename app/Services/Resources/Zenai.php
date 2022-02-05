@@ -39,9 +39,9 @@ final class Zenai {
 
         if(in_array($keyword, array_keys($res))){
             $res = $res[$keyword];
-            $url = "http://xcrm.yongbuzhixi.com/api/redirect.mp3?target=http://dailyaudio-1253798207.file.myqcloud.com/{$res['code']}{$date}.mp3";
+            $url = "https://xcrm.yongbuzhixi.com/api/redirect.mp3?target=http://dailyaudio-1253798207.file.myqcloud.com/{$res['code']}{$date}.mp3";
             if($keyword == '认识你真好')
-                $url = "http://xcrm.yongbuzhixi.com/api/redirect.mp3?target=https://febc-1253798207.file.myqcloud.com/vof/{$res['code']}{$date}.mp3";
+                $url = "https://xcrm.yongbuzhixi.com/api/redirect.mp3?target=https://febc-1253798207.file.myqcloud.com/vof/{$res['code']}{$date}.mp3";
                 
             return [
             	'type' => 'music',
