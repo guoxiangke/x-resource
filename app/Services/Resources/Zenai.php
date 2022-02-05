@@ -42,7 +42,7 @@ final class Zenai {
             $url = "http://dailyaudio-1253798207.file.myqcloud.com/{$res['code']}{$date}.mp3";
             if($keyword == '认识你真好')
                 $url = "https://febc-1253798207.file.myqcloud.com/vof/{$res['code']}{$date}.mp3";
-            if(date('N')>5 && $keyword == '认识你真好') return null;
+            if(date('N')>5 && $keyword == '真爱驻我家') return null;
             return [
             	'type' => 'music',
             	"data"=> [
