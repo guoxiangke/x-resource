@@ -25,7 +25,7 @@ final class Zenai {
                 'code' => "tllczy",
                 'textCode' => "tllczy",
             ],
-            '真爱驻我家' =>[ // 1 - 5
+            '真爱驻我家' =>[ // 1 - 5 真爱驻我家 是周日周一休息
                 'imageCode' => 'tltl',
                 'code' => "tlsp",
                 'textCode' => "tlsp",
@@ -42,7 +42,7 @@ final class Zenai {
             $url = "http://dailyaudio-1253798207.file.myqcloud.com/{$res['code']}{$date}.mp3";
             if($keyword == '认识你真好')
                 $url = "https://febc-1253798207.file.myqcloud.com/vof/{$res['code']}{$date}.mp3";
-            if(date('N')>5 && $keyword == '真爱驻我家') return null;
+            if($keyword == '真爱驻我家' && (date('N')==1 || date('N')==7)) return null;
             return [
             	'type' => 'music',
             	"data"=> [
