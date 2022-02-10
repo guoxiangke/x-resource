@@ -27,8 +27,8 @@ final class Zenai {
             ],
             '真爱驻我家' =>[ // 1 - 5 真爱驻我家 是周日周一休息
                 'imageCode' => 'tltl',
-                'code' => "tlsp",
-                'textCode' => "tlsp",
+                'code' => "tlpc",
+                'textCode' => "tlcp",
             ],
             '认识你真好' =>[
                 'imageCode' => 'vof',
