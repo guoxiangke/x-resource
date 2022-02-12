@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use voku\helper\HtmlDomParser;
 
-final class Zan{
+final class Zhen{
 	public function __invoke($keyword)
 	{
         if($keyword == '说真的'){
