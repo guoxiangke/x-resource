@@ -32,7 +32,7 @@ final class LyAudio{
         if($code = array_search($keyword, $map)){
             $data = Cache::get($code, false);//cc
             if(!$data){
-                $json = Http::get('https://open.ly.yongbuzhixi.com/api/program/'.$code)->json();
+                $json = Http::get('https://open.729ly.net/api/program/'.$code)->json();
                 $item = $json['data'][0];
                 $data =[
                     "url" => $item['link'],
