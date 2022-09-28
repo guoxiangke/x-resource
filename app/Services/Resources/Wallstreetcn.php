@@ -19,11 +19,10 @@ final class Wallstreetcn{
                 $json =$response->json();
                 $id = $json['data']['items'][0]['id'];
 
-                // https://api-one-wscn.awtmt.com/apiv1/content/articles/{$id}?extract=0
                 // $mp3 =  $json['data']['audio_uri'];
 
                 // https://streaming-wscn.awtmt.com/f2640c3b-74d1-4474-9918-e8da4d9d78d9.mp3
-                $response = Http::get("https://wallstreetcn.com/articles/{$id}");
+                $response = Http::get("https://api-one-wscn.awtmt.com/apiv1/content/articles/{$id}?extract=0");
                 $json =$response->json();
                 $html = $json['data']['content'];
 
