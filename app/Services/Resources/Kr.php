@@ -28,10 +28,7 @@ final class Kr{
                 $url = 'http://36kr.com/column/491522785281';
                 $response = $client->get($url, [
                     'headers'  => $headers,
-                    // 'curl' => [
-                    //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_0,
-                    // ],
-                    'debug' => true,
+                    'debug' => false,
                 ]);
                 $html = (string)$response->getBody();
 
@@ -41,7 +38,7 @@ final class Kr{
 
                 $htmlTmp = HtmlDomParser::str_get_html($html);
                 $mp3 =  $htmlTmp->getElementByTagName('audio')->getAttribute('src');
-                $title =  $htmlTmp->getElementByTagName('audio-title')->text();
+                $title =  $htmlTmp->findOne('audio-title')->text();
 
 
                 $data =[
