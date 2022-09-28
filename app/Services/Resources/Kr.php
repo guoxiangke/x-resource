@@ -38,7 +38,7 @@ final class Kr{
 
                 $htmlTmp = HtmlDomParser::str_get_html($html);
                 $mp3 =  $htmlTmp->getElementByTagName('audio')->getAttribute('src');
-                $title =  $htmlTmp->findOne('audio-title')->text();
+                $title =  $htmlTmp->findOne('.audio-title')->text();
 
 
                 $data =[
