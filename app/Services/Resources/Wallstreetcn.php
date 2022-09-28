@@ -19,10 +19,16 @@ final class Wallstreetcn{
                 $json =$response->json();
                 $id = $json['data']['items'][0]['id'];
 
+                // https://api-one-wscn.awtmt.com/apiv1/content/articles/{$id}?extract=0
+                // $mp3 =  $json['data']['audio_uri'];
 
-                $response = Http::get("https://api-one-wscn.awtmt.com/apiv1/content/articles/{$id}?extract=0");
+                // https://streaming-wscn.awtmt.com/f2640c3b-74d1-4474-9918-e8da4d9d78d9.mp3
+                $response = Http::get("https://wallstreetcn.com/articles/{$id}");
                 $json =$response->json();
-                $mp3 =  $json['data']['audio_uri'];
+                $html = $json['data']['content'];
+
+                $htmlTmp = HtmlDomParser::str_get_html($html);
+                $mp3 =  $htmlTmp->findOne('img.wscnph')->getAttribute('data-uri');
 
                 $title = "华尔街见闻早餐:{$date}";
 				$desc = "市场有风险，投资需谨慎。本文不构成个人投资建议";
