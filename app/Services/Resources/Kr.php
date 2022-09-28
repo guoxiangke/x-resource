@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use voku\helper\HtmlDomParser;
+use GuzzleHttp\Client;
 
 final class Kr{
     public function __invoke($keyword)
@@ -18,8 +19,26 @@ final class Kr{
             $cacheKey = "xbot.keyword.kr";
             $data = Cache::get($cacheKey, false);
             if(!$data){
-                $response = Http::get("https://36kr.com/column/491522785281");
-                $html = $response->body();
+                
+                $client = new Client();
+                $userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36';
+                $headers = [
+                    'User-Agent'=> $userAgent,
+                ];
+                $url = 'http://36kr.com/column/491522785281';
+                $response = $client->get($url, [
+                    'headers'  => $headers,
+                    // 'curl' => [
+                    //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_0,
+                    // ],
+                    'debug' => true,
+                ]);
+                $html = (string)$response->getBody();
+
+                    // cURL error 23: Failed reading the chunked-encoded stream
+                // $response = Http::get("http://36kr.com/column/491522785281");
+                // $html = $response->body();
+
                 $htmlTmp = HtmlDomParser::str_get_html($html);
                 $mp3 =  $htmlTmp->getElementByTagName('audio')->getAttribute('src');
                 $title =  $htmlTmp->getElementByTagName('audio-title')->text();
