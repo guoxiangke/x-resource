@@ -21,7 +21,7 @@ final class Ifanr{
                 $response = Http::get("https://sso.ifanr.com/api/v5/wp/article/?post_category=早报&position=ifr_fourth_cards_layout");
                 $json =$response->json();
                 $image = $json['objects'][0]['post_cover_image'];
-                $url  = $json['objects'][0]['post_url'];
+                $link  = $json['objects'][0]['post_url'];
                 $title = $json['objects'][0]['post_title'];
 
                 $description = $json['objects'][0]['post_excerpt'];
