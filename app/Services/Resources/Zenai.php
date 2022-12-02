@@ -59,6 +59,8 @@ final class Zenai {
                 $image = "https://d33tzbj8j46khy.cloudfront.net/{$res['code']}.png";
 
                 $mp3 = "https://depk9mke9ym92.cloudfront.net/{$res['code']}/".($res['mp3Code']??$res['code']).substr($jdata['time'],2).".mp3";//$jdata['path']
+
+                // https://d7jf0n9s4n8dc.cloudfront.net/html/tlgr/tlgr221203.html
                 $data = [
                     'type' => 'music',
                     "data"=> [
@@ -73,7 +75,7 @@ final class Zenai {
                         'type' => 'link',
                         'data' => [
                             'image' => $image,
-                            "url" => "https://d7jf0n9s4n8dc.cloudfront.net/html/{$res['code']}/{$res['code']}".substr($jdata['time'],2).".html",
+                            "url" => "https://d7jf0n9s4n8dc.cloudfront.net/html/".($res['mp3Code']??$res['code'])."/".($res['mp3Code']??$res['code'])."".substr($jdata['time'],2).".html",
                             'title' => $title,
                             'description' => '节目文本-'. $jdata['title'],
                         ],
