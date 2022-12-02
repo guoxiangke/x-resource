@@ -58,7 +58,7 @@ final class Zenai {
                 $title = "【{$keyword}】{$res['title']}-".substr($jdata['time'],2);
                 $image = "https://d33tzbj8j46khy.cloudfront.net/{$res['code']}.png";
 
-                $mp3 = "https://depk9mke9ym92.cloudfront.net/{$res['code']}/".($res['mp3Code']??$res['code'])."221203.mp3";//$jdata['path']
+                $mp3 = "https://depk9mke9ym92.cloudfront.net/{$res['code']}/".($res['mp3Code']??$res['code']).substr($jdata['time'],2).".mp3";//$jdata['path']
                 $data = [
                     'type' => 'music',
                     "data"=> [
