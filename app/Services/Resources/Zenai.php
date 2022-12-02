@@ -47,7 +47,7 @@ final class Zenai {
             $cacheKey = "xbot.700.{$keyword}";
             $data = Cache::get($cacheKey, false);
             if($data) return $data;
-            
+
             if(!$data){
                 $res = $res[$keyword];
                 $response = Http::get("https://d3pc7cwodb2h3p.cloudfront.net/all_{$res['code']}_songs.json");
@@ -79,7 +79,7 @@ final class Zenai {
                     return $data;
                 }
                 Cache::put($cacheKey, $data, strtotime('tomorrow') - time());
-                return $data
+                return $data;
             }
         }
         return null;
