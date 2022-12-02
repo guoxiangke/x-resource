@@ -36,6 +36,8 @@ final class Zenai {
             '704' =>[ // 1 - 5 真爱驻我家 是周一休息
                 'title' => '真爱驻我家',
                 'code' => "tltl",
+                'mp3Code' => "tlgr",
+                // https://depk9mke9ym92.cloudfront.net/tltl/tlgr221203.mp3
             ],
             '705' =>[
                 'title' => '尔道自建',
@@ -56,7 +58,7 @@ final class Zenai {
                 $title = "【{$keyword}】{$res['title']}-".substr($jdata['time'],2);
                 $image = "https://d33tzbj8j46khy.cloudfront.net/{$res['code']}.png";
 
-                $mp3 = "https://depk9mke9ym92.cloudfront.net/{$res['code']}/{$res['code']}221203.mp3";//$jdata['path']
+                $mp3 = "https://depk9mke9ym92.cloudfront.net/{$res['code']}/{$res['mp3Code']??$res['code']}221203.mp3";//$jdata['path']
                 $data = [
                     'type' => 'music',
                     "data"=> [
