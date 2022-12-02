@@ -18,9 +18,9 @@ final class Zenai {
             'data' => ['content' => $content]
         ];
     }
-
+// https://depk9mke9ym92.cloudfront.net/tllczy/tllczy221203.mp3
         $res = [
-            // https://d3pc7cwodb2h3p.cloudfront.net/all_vof_songs.json
+            // https://d3pc7cwodb2h3p.cloudfront.net/all_tllczy_songs.json
             '701' =>[ // 1 - 7
                 'title' => '灵程真言',
                 'code' => "tllczy",
@@ -55,10 +55,12 @@ final class Zenai {
                 $jdata = last($json);
                 $title = "【{$keyword}】{$res['title']}-".substr($jdata['time'],2);
                 $image = "https://d33tzbj8j46khy.cloudfront.net/{$res['code']}.png";
+
+                $mp3 = 'https://depk9mke9ym92.cloudfront.net/{$res['code']}/{$res['code']}221203.mp3';//$jdata['path']
                 $data = [
                     'type' => 'music',
                     "data"=> [
-                        "url" => $jdata['path'],
+                        "url" => $mp3,
                         'title' => $title,
                         'description' => $jdata['title'],
                         'image' => $image,
