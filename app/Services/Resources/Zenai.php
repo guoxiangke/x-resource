@@ -91,6 +91,15 @@ final class Zenai {
                     ],
                 ];
                 if($jdata['hasArtistHtml']){
+                    $weekCode=['ht',1,'tl','ms','pc','sp','gr'];//0-6
+                    if($res['code'] == 'tltl'){
+                        // 20220910
+                        $d = DateTime::createFromFormat('Ymd', $jdata['time']);
+                        $dayOfWeek = $d->format('w');
+                        if($dayOfWeek==1) return;//周一没有
+                        $res['code'] = 'tl' . $weekCode[$dayOfWeek];
+                        $res['mp3Code'] = 'tl' . $weekCode[$dayOfWeek];
+                    }
                     $addition = [
                         'type' => 'link',
                         'data' => [
